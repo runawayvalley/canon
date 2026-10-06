@@ -15,12 +15,13 @@ def chord_report(phrase):
         rows.append((on, p, name, kind, on == int(on)))
     return rows
 
-def sounding(voices, t):
-    """voices: {name: [(onset, dur, midi)]} -> [(name, midi, onset_here)]"""
+def sounding(voices, t, tail=.1):
+    """voices: {name: [(onset, dur, midi)]} -> [(name, midi, onset_here)].
+    The last `tail` beats of a note are ignored (legato overlap / release, not a real clash)."""
     out = []
     for v, ns in voices.items():
         for on, d, n in ns:
-            if on <= t + 1e-9 < on + d:
+            if on <= t + 1e-9 < on + max(d - tail, .05):
                 out.append((v, n, abs(on - t) < 1e-9))
     return out
 

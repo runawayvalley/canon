@@ -62,7 +62,7 @@ Each "cycle" = one 2-bar pass of the ground bass.
 | # | Section | Cycles | Key | Tempo | Content |
 | --- | --- | --- | --- | --- | --- |
 | 1 | **On the Hill** | 1–4 | D | ~58, rubato | Solo piano: ground in the left hand, Theme A in the right. Nostalgic, quiet. |
-| 2 | **The Breeze** | 5–8 | D | 62 | Strings join softly; harp arpeggios; flute pentatonic answers. Canon voice 1 in the violins. |
+| 2 | **The Breeze** | 5–8 | D | 62 | Cello takes the ground, harp rolled chords, flute sings Theme A, violin Theme B, flute pentatonic answers. Solo melodies only (the strict canon starts at Take-off, to keep its 2-bar spacing). |
 | 3 | **Take-off** | 9–12 | D → E♭ | 62 → 70 | Voices 2 and 3 enter (+2, +4 bars). String tremolo + harp glissando swell, short breath, then the lift into E♭. |
 | 4 | **Flight** | 13–20 | E♭ | 72–76 | Full canon. Running 8ths/16ths in the strings, horns sing Theme B, glockenspiel sparkle, light snare/timpani pulse. |
 | 5 | **Through the Clouds (bridge)** | 21–24 | E♭ (♭VI colour) | 72, feel slows | The only cycles allowed to leave the ground: a Hisaishi-style IVmaj7 – V – iii7 – vi7 interlude. Thin texture: high strings, celesta, solo oboe. Ends with a ♭VI–♭VII lift. |
@@ -105,7 +105,7 @@ sky/
 ## Milestones
 
 1. ✅ **Themes, bass and harmony** (done, see `MILESTONE1.md`). Ground bass, recolored progression, Theme A/B, canon-clash check; piano-only sketch of cycles 1–4.
-2. **Sections 1–3.** Hill, Breeze, Take-off (including the D → E♭ lift).
+2. ✅ **Sections 1–3** (done, see `MILESTONE2.md`). Hill, Breeze, Take-off (including the D → E♭ lift).
 3. **Sections 4–5.** Full flight texture and the cloud bridge.
 4. **Sections 6–7.** F-major climax and landing.
 5. **Expression, orchestration and render.** CC/rubato/humanization tooling, final instrument assignment, mix and render.
