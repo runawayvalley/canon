@@ -111,7 +111,7 @@ nightmare/
 2. ✅ **Sections 1–3** (done, see `MILESTONE2.md`). Build the lullaby, the major→minor transition, and the canon entries.
 3. ✅ **Sections 4–5** (done, see `MILESTONE3.md`). Add the nightmare techniques and the polytonal fracture.
 4. ✅ **Sections 6–7** (done, see `MILESTONE4.md`). Write the climax and the unresolved ending.
-5. **Orchestration and render.** Assign instruments, render an audio preview.
+5. ✅ **Orchestration and render** (done, see `MILESTONE5.md`). Assign instruments, render an audio preview.
 6. **Review and iterate.** Check recognizability vs. scariness, adjust the key (D minor vs. C# minor), then commit and push.
 
 ## Open questions
