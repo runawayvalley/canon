@@ -40,11 +40,11 @@ One chord per quarter note, so one pass of the ground = 2 bars of 4/4.
 | Bar.beat | Original | Sky | Notes |
 | --- | --- | --- | --- |
 | 1.1 | D | **Dmaj7 / Dadd9** | warm tonic |
-| 1.2 | A | **A/C#** | stepwise bass line, Hisaishi-like |
+| 1.2 | A | **A(add9)** | C# in the tenor (the ground keeps A in the bass) |
 | 1.3 | Bm | **Bm7** | |
 | 1.4 | F#m | **F#m7** (later **F#7**, a secondary dominant pulling to Bm/G) | |
 | 2.1 | G | **Gmaj7** | the warm IVmaj7 colour |
-| 2.2 | D | **D/F#** | |
+| 2.2 | D | **Dadd9** | F# on top of the voicing, not in the bass |
 | 2.3 | G | **Gmaj9** or **Em7** | |
 | 2.4 | A | **Asus4 → A7** | at section boundaries: **B♭ → C → D** (♭VI–♭VII–I lift) |
 
@@ -55,21 +55,21 @@ One chord per quarter note, so one pass of the ground = 2 bars of 4/4.
 - **Ornamental voice:** the original's 8th/16th-note variations rewritten as pentatonic runs for flute, harp and glockenspiel (gusts of wind, birds).
 - **Rule:** each theme must fit the canon (works against itself at a 2-bar offset). Check for clashes in code before orchestrating.
 
-## Structure (draft, ~3:30–4:00)
+## Structure (draft, ~4:15)
 
 Each "cycle" = one 2-bar pass of the ground bass.
 
 | # | Section | Cycles | Key | Tempo | Content |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **On the Hill** | 1–4 | D | ~72, rubato | Solo piano: ground in the left hand, Theme A in the right. Nostalgic, quiet. |
-| 2 | **The Breeze** | 5–8 | D | 76 | Strings join softly; harp arpeggios; flute pentatonic answers. Canon voice 1 in the violins. |
-| 3 | **Take-off** | 9–12 | D → E♭ | 76 → 92 | Voices 2 and 3 enter (+2, +4 bars). String tremolo + harp glissando swell, short breath, then the lift into E♭. |
-| 4 | **Flight** | 13–20 | E♭ | 92–96 | Full canon. Running 8ths/16ths in the strings, horns sing Theme B, glockenspiel sparkle, light snare/timpani pulse. |
-| 5 | **Through the Clouds (bridge)** | 21–24 | E♭ (♭VI colour) | 96, feel slows | The only cycles allowed to leave the ground: a Hisaishi-style IVmaj7 – V – iii7 – vi7 interlude. Thin texture: high strings, celesta, solo oboe. Ends with a ♭VI–♭VII lift. |
-| 6 | **Above the Clouds (climax)** | 25–32 | F | 96 | Full orchestra; Theme A in horns + violins in octaves, Theme B against it, canon at full height. |
-| 7 | **Landing** | 33–36 | F | 96 → 66 rit. | Voices fall away one by one. Solo piano returns with Theme A, slowing, ends on Fadd9. |
+| 1 | **On the Hill** | 1–4 | D | ~58, rubato | Solo piano: ground in the left hand, Theme A in the right. Nostalgic, quiet. |
+| 2 | **The Breeze** | 5–8 | D | 62 | Strings join softly; harp arpeggios; flute pentatonic answers. Canon voice 1 in the violins. |
+| 3 | **Take-off** | 9–12 | D → E♭ | 62 → 70 | Voices 2 and 3 enter (+2, +4 bars). String tremolo + harp glissando swell, short breath, then the lift into E♭. |
+| 4 | **Flight** | 13–20 | E♭ | 72–76 | Full canon. Running 8ths/16ths in the strings, horns sing Theme B, glockenspiel sparkle, light snare/timpani pulse. |
+| 5 | **Through the Clouds (bridge)** | 21–24 | E♭ (♭VI colour) | 72, feel slows | The only cycles allowed to leave the ground: a Hisaishi-style IVmaj7 – V – iii7 – vi7 interlude. Thin texture: high strings, celesta, solo oboe. Ends with a ♭VI–♭VII lift. |
+| 6 | **Above the Clouds (climax)** | 25–32 | F | 76 | Full orchestra; Theme A in horns + violins in octaves, Theme B against it, canon at full height. |
+| 7 | **Landing** | 33–36 | F | 76 → 50 rit. | Voices fall away one by one. Solo piano returns with Theme A, slowing, ends on Fadd9. |
 
-Approximate timing: cycles 1–12 ≈ 1:10, cycles 13–32 ≈ 1:45, landing ≈ 0:30 → about 3:30 plus rubato and tails.
+Approximate timing: cycles 1–12 ≈ 1:35, cycles 13–32 ≈ 2:10, landing ≈ 0:30 → about 4:15 plus rubato and tails. The tempo stays relaxed throughout (max ~76 BPM, with one chord per beat); the sense of flight comes from faster note values (8ths/16ths), not a faster beat.
 
 ## Instrumentation (GM presets in GeneralUser GS)
 
@@ -104,7 +104,7 @@ sky/
 
 ## Milestones
 
-1. **Themes, bass and harmony.** Ground bass, recolored progression, Theme A/B, canon-clash check; piano-only sketch of cycles 1–4.
+1. ✅ **Themes, bass and harmony** (done, see `MILESTONE1.md`). Ground bass, recolored progression, Theme A/B, canon-clash check; piano-only sketch of cycles 1–4.
 2. **Sections 1–3.** Hill, Breeze, Take-off (including the D → E♭ lift).
 3. **Sections 4–5.** Full flight texture and the cloud bridge.
 4. **Sections 6–7.** F-major climax and landing.
@@ -122,4 +122,4 @@ sky/
 
 - **Meter:** 4/4 throughout (default), or switch the Flight section to a 3/4 waltz lilt (Hisaishi often uses waltzes)? A 3/4 version would stretch the ground to 3 bars and weaken the canon's 2-bar spacing.
 - **Key changes:** D → E♭ → F (default), or stay in D?
-- **Length:** ~3:30–4:00, or shorter?
+- **Length:** ~4:15, or trim the Flight section (cycles 13–20) to get under 4 minutes?
