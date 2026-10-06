@@ -109,7 +109,7 @@ nightmare/
 
 1. ✅ **Theme and bass in D minor** (done, see `MILESTONE1.md`). Write the ground bass, the reharmonized progression, and the minor theme, then sanity-check that it's still recognizable.
 2. ✅ **Sections 1–3** (done, see `MILESTONE2.md`). Build the lullaby, the major→minor transition, and the canon entries.
-3. **Sections 4–5.** Add the nightmare techniques and the polytonal fracture.
+3. ✅ **Sections 4–5** (done, see `MILESTONE3.md`). Add the nightmare techniques and the polytonal fracture.
 4. **Sections 6–7.** Write the climax and the unresolved ending.
 5. **Orchestration and render.** Assign instruments, render an audio preview.
 6. **Review and iterate.** Check recognizability vs. scariness, adjust the key (D minor vs. C# minor), then commit and push.
