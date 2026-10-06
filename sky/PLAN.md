@@ -107,7 +107,7 @@ sky/
 1. ✅ **Themes, bass and harmony** (done, see `MILESTONE1.md`). Ground bass, recolored progression, Theme A/B, canon-clash check; piano-only sketch of cycles 1–4.
 2. ✅ **Sections 1–3** (done, see `MILESTONE2.md`). Hill, Breeze, Take-off (including the D → E♭ lift).
 3. ✅ **Sections 4–5** (done, see `MILESTONE3.md`). Full flight texture and the cloud bridge.
-4. **Sections 6–7.** F-major climax and landing.
+4. ✅ **Sections 6–7** (done, see `MILESTONE4.md`). F-major climax and landing.
 5. **Expression, orchestration and render.** CC/rubato/humanization tooling, final instrument assignment, mix and render.
 6. **Review and iterate.** Compare with the checks below, then commit and push.
 
