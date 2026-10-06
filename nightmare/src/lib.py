@@ -31,6 +31,9 @@ class Score:
     def set_timesig(self, beat, num, den=4):
         self.timesigs = [t for t in self.timesigs if t[0] != beat] + [(beat, num, den)]
         self.timesigs.sort()
+    def cut(self, beat, dur):
+        """Hard silence (applied after reverb, so nothing rings through)."""
+        self.effects.append(("cut", beat, dur))
     def tapestop(self, beat, dur):
         self.effects.append(("tapestop", beat, dur))
     def set_tempo(self, beat, bpm):
@@ -113,7 +116,8 @@ SR = 44100
 def _hz(n, cents): return 440.0 * 2 ** ((n - 69 + cents / 100) / 12)
 
 def _voice(kind, n, dur, vel, cents):
-    tail = {"musicbox": 1.8, "violin": .35, "pad": .6, "cello": .3, "drone": 1.5, "choir": .8}[kind]
+    tail = {"musicbox": 1.8, "violin": .35, "pad": .6, "cello": .3, "drone": 1.5, "choir": .8,
+            "brass": .35, "taiko": 1.2}[kind]
     tt = np.arange(int((dur + tail) * SR)) / SR
     f, L = _hz(n, cents), dur + tail
     rel = np.clip((L - tt) / tail, 0, 1)
@@ -141,6 +145,15 @@ def _voice(kind, n, dur, vel, cents):
                 a = np.exp(-((fk - 320) / 140) ** 2) + .5 * np.exp(-((fk - 800) / 200) ** 2) + .02
                 sig += a * np.sin(k * ph)
         env, g = np.minimum(1, tt / .6) * np.where(tt < dur, 1, rel), .05
+    elif kind == "brass":    # low brass: saw-ish, brightness opens with the attack
+        bright = np.minimum(1, tt / .12)
+        sig = sum(np.sin(2 * np.pi * f * k * tt) / k ** (2.2 - 1.1 * bright) for k in range(1, 15))
+        env, g = np.minimum(1, tt / .04) * np.where(tt < dur, 1, rel), .07
+    elif kind == "taiko":    # pitch-drop body + noise skin hit
+        body = np.sin(2 * np.pi * np.cumsum(f * (1 + 1.5 * np.exp(-tt / .03))) / SR)
+        noise = np.random.default_rng(n).standard_normal(len(tt)) * np.exp(-tt / .025)
+        sig = body * np.exp(-tt / .45) + .35 * noise
+        env, g = np.minimum(1, tt / .002), .55
     else:  # drone: two slightly beating sines, slow swell
         sig = np.sin(2 * np.pi * f * tt) + np.sin(2 * np.pi * f * 1.003 * tt) + .3 * np.sin(4 * np.pi * f * tt)
         env, g = np.minimum(1, tt / 4.0) * np.where(tt < dur, 1, rel) * (1 + .25 * np.sin(2 * np.pi * .13 * tt)), .12
@@ -176,6 +189,12 @@ def render(path, score, tail=6.0):
             seg = np.interp(pos, np.arange(len(ch)), ch) * fade
             ch[s0:s0 + n] = 0; ch[s0:s0 + stop] = seg
     L, R = _reverb(L, seed=3), _reverb(R, seed=4)
+    for kind, b, d in score.effects:
+        if kind != "cut": continue
+        s0, s1 = int(score.seconds(b) * SR), int(score.seconds(b + d) * SR)
+        f = int(.01 * SR)
+        for ch in (L, R):
+            ch[s0:s0 + f] *= np.linspace(1, 0, len(ch[s0:s0 + f])); ch[s0 + f:s1] = 0
     peak = max(np.abs(L).max(), np.abs(R).max())
     st = (np.stack([L, R], 1) / peak * .85 * 32767).astype("<i2")
     with wave.open(path, "wb") as w:
