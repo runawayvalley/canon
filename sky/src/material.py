@@ -36,6 +36,15 @@ V3 = [("D5", 1), ("E5", 1), ("F#5", 1.5), ("E5", .5), ("D5", 1), ("A4", 1), ("B4
 V4_THEME_B = [("A4", .5), ("F#5", 2), ("E5", .5), ("C#5", 1), ("D5", 1.5), ("E5", .5), ("F#5", 1), ("E5", 1)]
 CANON_LINE = [V1_THEME_A, V2, V3, V4_THEME_B]
 
+# Flight variations (milestone 3). Contrast in note values so that at most one voice runs in 8ths:
+V5_RUN = [("F#5", .5), ("A5", .5), ("E5", .5), ("A5", .5), ("F#5", .5), ("D5", .5), ("C#5", .5), ("E5", .5),
+          ("D5", .5), ("B4", .5), ("A4", .5), ("D5", .5), ("B4", .5), ("D5", .5), ("E5", .5), ("C#5", .5)]
+V6_SOAR = [("A5", 2), ("F#5", 2), ("G5", 1), ("F#5", 1), ("E5", 2)]
+V7_SKIP = [("D5", .75), ("E5", .25), ("F#5", 1), ("D5", .75), ("E5", .25), ("F#5", 1),
+           ("B4", .75), ("C#5", .25), ("D5", 1), ("E5", 1.5), ("C#5", .5)]
+V8_RISE = [("A4", 1), ("C#5", 1), ("F#5", 2), ("E5", 1), ("D5", 1), ("E5", 2)]
+FULL_LINE = CANON_LINE + [V5_RUN, V6_SOAR, V7_SKIP, V8_RISE]          # loops after V8
+
 # Ornamental flute / glockenspiel line: strictly yonanuki pentatonic (D E F# A B), sparse "bird calls".
 YONANUKI = {"D", "E", "F#", "A", "B"}
 ORNAMENT = [("A5", 1.5), ("B5", .5), ("A5", 2), ("F#5", 1), ("E5", 1), ("D6", 1), ("B5", 1)]
@@ -44,6 +53,10 @@ ORNAMENT = [("A5", 1.5), ("B5", .5), ("A5", 2), ("F#5", 1), ("E5", 1), ("D6", 1)
 THEME_A_SLOW = [(n, 2) for n, _ in V1_THEME_A]
 
 ORIGINAL_THEME = ["F#5", "E5", "D5", "C#5", "B4", "A4", "B4", "C#5"]
+
+def tp(phrase, semis):
+    """Transpose a phrase -> [(midi | None, beats)]."""
+    return [(None if n is None else (n if isinstance(n, int) else m(n)) + semis, d) for n, d in phrase]
 
 def pc(note):
     return note.rstrip("0123456789")
